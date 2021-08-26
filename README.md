@@ -21,7 +21,7 @@ Niezalogowany użytkownik ma możliwość:
 
 ## Diagram związków encji
 
-<p align="left"><img src="images/diagram_erd.png"></p>
+<p align="left"><img src="Diagram/diagram_erd.png"></p>
 
 ## Technologie
 Projekt został stworzony przy użyciu:
