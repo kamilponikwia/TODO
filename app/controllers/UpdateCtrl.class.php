@@ -1,0 +1,60 @@
+<?php
+
+namespace app\controllers;
+
+use core\App;
+use PDO;
+
+class UpdateCtrl {
+
+    public function action_edit() {
+
+        function pdo_connect_mysql() {
+
+            $DATABASE_HOST = 'localhost';
+            $DATABASE_USER = 'root';
+            $DATABASE_PASS = '';
+            $DATABASE_NAME = 'todo';
+            try {
+
+                return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+            } catch (PDOException $exception) {
+
+                exit('Nie udało się połączyć z bazą danych!');
+            }
+        }
+
+        $pdo = pdo_connect_mysql();
+        $msg = '';
+
+        if (isset($_GET['id'])) {
+            
+            if (!empty($_POST)) {
+
+                $id = isset($_POST['id']) ? $_POST['id'] : NULL;
+                $name = isset($_POST['name']) ? $_POST['name'] : '';
+                $created = isset($_POST['created']) ? $_POST['created'] : date('Y-m-d H:i:s');
+
+                $stmt = $pdo->prepare('UPDATE tasks SET id = ?, name = ?, created = ? WHERE id = ?');
+                $stmt->execute([$id, $name, $created, $_GET['id']]);
+                $msg = 'Zadanie zostało zaktualizowane!';
+            }
+
+            $stmt = $pdo->prepare('SELECT * FROM tasks WHERE id = ?');
+            $stmt->execute([$_GET['id']]);
+            $task = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if (!$task) {
+                
+                exit('Zadanie z tym identyfikatorem nie istnieje!');
+            }
+        } else {
+            exit('Nie podano identyfikatora!');
+        }
+
+        App::getSmarty()->assign('task', $task);
+        App::getSmarty()->assign('msg', $msg);
+        App::getSmarty()->display('Update.tpl');
+    }
+
+}
