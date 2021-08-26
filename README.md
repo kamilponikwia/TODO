@@ -21,4 +21,4 @@ Niezalogowany użytkownik ma możliwość:
 ## Technologie
 Projekt został stworzony przy użyciu:
 * HTML/CSS,
-* PHP/Smarty/Medoo.
+* Amelia (PHP/Smarty/Medoo).
