@@ -4,15 +4,16 @@ Projekt zaliczeniowy – Aplikacja internetowa TODO List
 Celem projektu była realizacja aplikacji do zarządzania listami zadań, która jest odpowiednikiem
 tradycyjnej, papierowej listy rzeczy do zrobienia z wykorzystaniem technologii poznanej w ramach przedmiotu Aplikacje internetowe.
 
-Aplikacja spełniała warunek systemu wieloużytkownikowego.
+Aplikacja spełnia warunek systemu wieloużytkownikowego.
 
-Zalogowany użytkownik będzie miał możliwość:
+Zalogowany użytkownik ma możliwość:
 * wyświetlenia listy zadań do wykonania,
 * dodanie nowego zadania,
+* edytowanie zadania (tylko własnego),
 * usunięcie zadania (tylko własnego),
-* edytowanie zadania (tylko własnego).
+* wyświetlenia danych swojego konta (własny profil).
 
-Niezalogowany użytkownik będzie miał możliwość:
+Niezalogowany użytkownik ma możliwość:
 * założenie nowego konta, 
 * zalogowanie się do istniejącego konta.
 
