@@ -1,3 +1,5 @@
+# Aplikacje internetowe
+
 ## Informacje ogólne
 Projekt zaliczeniowy – Aplikacja internetowa TODO List
 
@@ -17,6 +19,9 @@ Niezalogowany użytkownik ma możliwość:
 * założenie nowego konta, 
 * zalogowanie się do istniejącego konta.
 
+## Diagram związków encji
+
+<p align="left"><img width="460" height="300" src="images/1.jpg"></p>
 
 ## Technologie
 Projekt został stworzony przy użyciu:
